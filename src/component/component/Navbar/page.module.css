@@ -1,0 +1,18 @@
+.main{
+    display: flex;
+    background-color:#667F5A;
+    height: 7vh;
+    border-radius: 30px;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+}
+.links{
+    display: flex;
+    width: 40vw;
+    gap: 2vw;
+    display: flex;
+    justify-content: space-between;
+}

@@ -2,94 +2,187 @@ import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
+  const teams = [
+    {
+      teamName: "Mech1",
+      goalsScored: 5,
+      goalsFaced: 1,
+      wins:1,
+      draw:0,
+      loss:0,
+      
+    },
+    {
+      teamName: "Mech2",
+      goalsScored: 1,
+      goalsFaced: 5,
+      wins:0,
+      draw:0,
+      loss:1,
+    
+    },
+    {
+      teamName: "Csb",
+      goalsScored: 2,
+      goalsFaced: 1,
+      wins:1,
+      draw:0,
+      loss:0,
+    },
+    {
+      teamName: "Csa",
+      goalsScored: 4,
+      goalsFaced: 5,
+      wins:0,
+      draw:0,
+      loss:1,
+    
+    },
+    {
+      teamName: "Csc",
+      goalsScored: 1,
+      goalsFaced: 2,
+      wins:0,
+      draw:0,
+      loss:1,
+    
+    },
+    {
+      teamName: "Csbs",
+      goalsScored: 5,
+      goalsFaced: 1,
+      wins:1,
+      draw:0,
+      loss:0,
+    
+    },
+    {
+      teamName: "Eca",
+      goalsScored: 1,
+      goalsFaced: 1,
+      wins:0,
+      draw:0,
+      loss:1,
+    
+    },
+    {
+      teamName: "Ecb",
+      goalsScored: 1,
+      goalsFaced: 0,
+      wins:1,
+      draw:0,
+      loss:0,
+    
+    },
+    {
+      teamName: "Eb",
+      goalsScored: 1,
+      goalsFaced: 5,
+      wins:0,
+      draw:0,
+      loss:1,
+    
+    },
+    {
+      teamName: "Eee",
+      goalsScored: 5,
+      goalsFaced: 4,
+      wins:1,
+      draw:0,
+      loss:0,
+    
+    },
+  ];
+  teams.forEach(team => {
+    team.played = team.wins + team.draw + team.loss;
+    team.pts = 3 * team.wins + team.draw;
+    team.goaldiff = team.goalsScored - team.goalsFaced;
+  });
+
+  teams.sort((a, b) => {
+    // Sort by pts in descending order
+    if (b.pts !== a.pts) {
+      return b.pts - a.pts;
+    }
+    // If pts are equal, sort by goaldiff in descending order
+    return b.goaldiff - a.goaldiff;
+  });
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={styles.main}>
+      <div className={styles.first}>
+      <iframe src='https://my.spline.design/untitled-0f82f716fb6553fdff354245b95229c2/' frameborder='0' width='100%' height='100%'></iframe>
+      </div>
+    <div className={styles.point}>
+      <h1>POINT TABLE</h1>
+    </div>
+    <div className={styles.thing}>
+     <div>
+      <h3>Tm</h3>
+     </div>
+     <div>
+      <h3>GP</h3>
+     </div>
+     <div>
+      <h3>W</h3>
+     </div>
+     <div>
+      <h3>D</h3>
+     </div>
+     <div>
+      <h3>L</h3>
+     </div>
+     <div>
+      <h3>GF</h3>
+     </div>
+     <div>
+      <h3>GA</h3>
+     </div>
+     <div>
+      <h3>GD</h3>
+     </div>
+     <div>
+      <h3>PTS</h3>
+     </div>
+
+    </div>
+    {teams.map((team, index) => (
+     
+        <div key={team.teamName} className={styles.table}>
+          <div className={styles.content}>
+            {`${team.teamName}`}
+          </div>
+
+          <div className={styles.content}>
+            {`${team.played}`}
+          </div>
+          <div className={styles.content}>
+            {`${team.wins}`}
+          </div>
+
+          <div className={styles.content}>
+            {`${team.draw}`}
+          </div>
+
+          <div className={styles.content}>
+            {`${team.loss}`}
+          </div>
+
+          <div className={styles.content}>
+            {`${team.goalsScored}`}
+          </div>
+
+          <div className={styles.content}>
+            {`${team.goaldiff}`}
+          </div>
+
+          <div className={styles.content}>
+            {`${team.pts}`}
+          </div>
+
+         
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+   
+    ))}
+  </div>
+);
 }

@@ -1,0 +1,17 @@
+.main{
+    width: 100vw;
+}
+.title{
+    padding-top: 2vh;
+    text-align: center;
+    opacity: 0.7;
+}
+.imgcontainer{
+  
+    
+}
+.img{
+    height: 60vh;
+    width: 98vw;
+    object-fit: contain;
+}

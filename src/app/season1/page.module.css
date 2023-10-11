@@ -1,0 +1,25 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 5vh;
+}
+.txt{
+    padding-top: 4vh;
+    width: 80vw;
+    text-align: center;
+    opacity: 0.7;
+}
+.imgContainer{
+    background-color: aquamarine;
+    width:98vw;
+    height: 40vh;
+}
+.img{
+ width: inherit;
+ height: inherit;
+    object-fit: cover;
+}
