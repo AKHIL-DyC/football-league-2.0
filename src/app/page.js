@@ -172,6 +172,11 @@ export default function Home() {
           </div>
 
           <div className={styles.content}>
+            {`${team.goalsFaced}`}
+          </div>
+
+
+          <div className={styles.content}>
             {`${team.goaldiff}`}
           </div>
 
