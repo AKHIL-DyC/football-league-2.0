@@ -1,7 +1,18 @@
+"use client"
 import Image from 'next/image'
 import styles from './page.module.css'
+import { useState, useEffect,useMemo } from 'react';
 
 export default function Home() {
+  const [iframeLoaded, setIframeLoaded] = useState(false);
+  const iframeContent=useMemo(()=>(
+    <iframe src='https://my.spline.design/untitled-0f82f716fb6553fdff354245b95229c2/' frameborder='0' width='100%' height='100%'></iframe>
+  ),[]);
+  useEffect(() => {
+    // Set iframeLoaded to true after the first render
+    setIframeLoaded(true);
+  }, []); // Empty dependency array ensures that this effect runs only once after initial render
+
   const teams = [
     {
       teamName: "Me1",
@@ -110,7 +121,8 @@ export default function Home() {
   return (
     <div className={styles.main}>
       <div className={styles.first}>
-      <iframe src='https://my.spline.design/untitled-0f82f716fb6553fdff354245b95229c2/' frameborder='0' width='100%' height='100%'></iframe>
+      {iframeLoaded && iframeContent}
+      {iframeLoaded || setIframeLoaded(true)}
       </div>
     <div className={styles.point}>
       <h1>POINT TABLE</h1>
