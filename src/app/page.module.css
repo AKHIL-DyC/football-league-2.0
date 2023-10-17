@@ -27,10 +27,13 @@
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
+
 }
 .content{
+  display: flex;
   width: 89vw;
   gap: 4vw;
+  justify-content: space-between;
  
 }
 .point{
@@ -41,10 +44,13 @@
   padding-bottom: 2vh;
 }
 .thing{
+  padding:4px;
   display: flex;
   opacity: 0.7;
+  font-size: 1.5;
   background-color:#0F2119;
-  width: 89vw;
+  width: 90vw;
   justify-content: space-between;
-  gap: 2vh;
+  gap: 1vh;
+  border-radius: 10px;
 }

@@ -4,7 +4,7 @@ import styles from './page.module.css'
 export default function Home() {
   const teams = [
     {
-      teamName: "Mech1",
+      teamName: "Me1",
       goalsScored: 5+9,
       goalsFaced: 1+1,
       wins:1+1,
@@ -13,7 +13,7 @@ export default function Home() {
       
     },
     {
-      teamName: "Mech2",
+      teamName: "Me2",
       goalsScored: 1+1,
       goalsFaced: 5+2,
       wins:0,
@@ -48,7 +48,7 @@ export default function Home() {
     
     },
     {
-      teamName: "Csbs",
+      teamName: "Cbs",
       goalsScored: 5+2,
       goalsFaced: 1+2,
       wins:1,
@@ -141,7 +141,7 @@ export default function Home() {
       <h3>GD</h3>
      </div>
      <div>
-      <h3>PTS</h3>
+      <h3>PT</h3>
      </div>
 
     </div>

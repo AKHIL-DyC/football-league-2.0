@@ -8,9 +8,9 @@ const Navbar = () => {
         <Link href='/'>MFL</Link>
       </div>
       <div className={styles.links}>
-    <Link href='/season1'>s1</Link>
-    <Link href='/fixture'>fixture</Link>
-    <Link href='/prize'>prize</Link>
+    <Link href='/season1'>S1</Link>
+    <Link href='/fixture'>Fixture</Link>
+    <Link href='/prize'>Prize</Link>
       </div>
     </div>
   )
